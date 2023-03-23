@@ -8,8 +8,8 @@ import Alert from "./components/Alert";
 import{
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
+  // Link
 } from "react-router-dom";
 
 function App() {
@@ -24,14 +24,14 @@ function App() {
       setAlert(null);
     }, 1500);
   };
-  const removeBodyClasses=()=>{
-    document.body.classList.remove('bg-light')
-    document.body.classList.remove('bg-dark')
-    document.body.classList.remove('bg-warning')
-    document.body.classList.remove('bg-success')
-    document.body.classList.remove('bg-danger')
-    // document.body.classList.remove('bg-')
-  }
+  // const removeBodyClasses=()=>{
+  //   document.body.classList.remove('bg-light')
+  //   document.body.classList.remove('bg-dark')
+  //   document.body.classList.remove('bg-warning')
+  //   document.body.classList.remove('bg-success')
+  //   document.body.classList.remove('bg-danger')
+  //   // document.body.classList.remove('bg-')
+  // }
   // const setTimeout(()=>{
   //   setAlert(null);
   // },3000);
@@ -101,14 +101,13 @@ function App() {
       </div>
       <div className="container">
         
-        {/* <button className="btn btn-primary">Convert to UpperCase</button> */}
-        {/* <About/> */}
+        
+      
         <Routes>
           <Route path="/about" element={<About/>}/>
-          {/* <Route path="/">
-          <TextForm heading="Enter the text to analyze below" mode={mode} />
-          </Route> */}
-          <Route path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode} />}/>
+          <Route path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode}/>}/>
+    
+
 
         </Routes>
       </div>
