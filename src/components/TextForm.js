@@ -28,7 +28,7 @@ export default function TextForm(props) {
   return (
     <>
       <div
-        className="container"
+        className="container my-3"
         style={{ color: props.mode === "dark" ? "white" : "black" }}
       >
         {/* now this double bracketis beacuse once for making it take input of js and inner {}because that's how only an object is written */}
@@ -42,26 +42,27 @@ export default function TextForm(props) {
             id="mybox"
             rows="8"
             style={{
-              backgroundColor: props.mode === "light" ? "white" : "#042743",color:props.mode==="light"?"black":"white"
+              backgroundColor: props.mode === "light" ? "white" : "#13466e",color:props.mode==="light"?"black":"white"
             }}
           ></textarea>
         </div>
 
-        <button className="btn btn-primary" onClick={handleupclick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleupclick}>
           Convert to Uppercase
         </button>
 
         <span> </span>
 
-        <button className="btn btn-primary" onClick={handleloclick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleloclick}>
           Convert to Lowercase
         </button>
 
         <span></span>
 
-        <button className="btn btn-primary" onClick={handlereverse}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handlereverse}>
           Reverse the String
         </button>
+        {/* the disabled function is used to remove the functionality of button when the textlength=0 */}
       </div>
 
       <div
@@ -70,10 +71,10 @@ export default function TextForm(props) {
       >
         <h1>Info about text</h1>
         <p>
-          Words:- {text.split(" ").length} and characters:- {text.length}
+          Words:- {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} and characters:- {text.length}
         </p>
         <p>
-          Time required to read whole text :- {0.008 * text.split(" ").length}
+          Time required to read whole text :- {0.008 * text.split(/\s+/).filter((element)=>{return element.length!==0}).length}
         </p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Enter something in the textbox above to preview it"}</p>
